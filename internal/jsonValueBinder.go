@@ -126,14 +126,13 @@ func (binder JsonValueBinder) bindJsonArray(rv reflect.Value, content []interfac
 
 func (binder JsonValueBinder) bindJsonObject(rv reflect.Value, content map[string]interface{}) error {
 	prototype, err := structproto.Prototypify(rv,
-		&structproto.StructProtoOption{
-			TagName:             JsonTagName,
-			ValueBinderProvider: BuildJsonValueBinder,
+		&structproto.StructProtoResolveOption{
+			TagName: JsonTagName,
 		})
 	if err != nil {
 		return err
 	}
-	return prototype.BindValues(structproto.NamedValues(content))
+	return prototype.BindFields(content, BuildJsonValueBinder)
 }
 
 func (binder JsonValueBinder) marshalContent(content interface{}) (interface{}, error) {

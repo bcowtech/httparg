@@ -22,7 +22,7 @@ func Process(content string, target interface{}) error {
 	provider := internal.NewQueryArgsBinder(values)
 
 	prototype, err := structproto.Prototypify(target,
-		&structproto.StructProtoOption{
+		&structproto.StructProtoResolveOption{
 			TagName: TagName,
 		})
 	if err != nil {

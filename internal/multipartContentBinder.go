@@ -31,10 +31,8 @@ func (binder *MultipartContentBinder) Init(context *structproto.StructProtoConte
 
 		var name = part.FormName()
 		if len(name) > 0 {
-			info := context.Field(name)
-			if ok := (info.Name() == name); ok {
+			if rv, ok := context.Field(name); ok {
 				var (
-					rv          = context.Target().Field(info.Index())
 					contentType = part.Header.Get(HEADER_CONTENT_TYPE)
 				)
 

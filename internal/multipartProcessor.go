@@ -30,7 +30,7 @@ func (p *MultipartProcessor) bind(target interface{}, reader *multipart.Reader) 
 	)
 
 	prototype, err := structproto.Prototypify(target,
-		&structproto.StructProtoOption{
+		&structproto.StructProtoResolveOption{
 			TagName: MultipartTagName,
 		})
 
