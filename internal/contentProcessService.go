@@ -18,7 +18,7 @@ func (service *ContentProcessService) Process(target interface{}, content []byte
 
 	processor := service.getProcessor(mediatype)
 	if processor == nil {
-		return fmt.Errorf("[httparg] cannot process specified content-type '%s'", mediatype)
+		return fmt.Errorf("cannot process specified content-type '%s'", mediatype)
 	}
 	return processor(content, target)
 }
@@ -28,7 +28,7 @@ func (service *ContentProcessService) ProcessQueryArgs(target interface{}, conte
 		proc = service.queryArgsProcessor
 	)
 	if proc == nil {
-		return fmt.Errorf("[httparg] cannot process query string")
+		return fmt.Errorf("cannot process query string")
 	}
 	return proc(content, target)
 }

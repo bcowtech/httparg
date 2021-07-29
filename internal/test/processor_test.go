@@ -293,8 +293,8 @@ Content-Type: application/json
 		}
 	}
 
-	// log.Printf("%+v\n", arg)         // {Title:Oliver Twist Author:Dickens Reversion:3 Category: Detail:0xc000086ae0
-	// log.Printf("%+v\n", arg.Detail)  // &{Price:25 Links:[www.dickensbooks.com]}
+	t.Logf("%+v\n", arg)        // {Title:Oliver Twist Author:Dickens Reversion:3 Category: Detail:0xc000086ae0
+	t.Logf("%+v\n", arg.Detail) // &{Price:25 Links:[www.dickensbooks.com]}
 }
 
 func TestMultipart_Nested(t *testing.T) {
@@ -412,9 +412,9 @@ Table of Content .....
 		}
 	}
 
-	// log.Printf("%+v\n", arg)         // {Title:Oliver Twist Author:Dickens Reversion:3 Category: Detail:0xc000005ac0 Preview:0xc000005c60}
-	// log.Printf("%+v\n", arg.Detail)  // &{Price:25 Links:[www.dickensbooks.com]}
-	// log.Printf("%+v\n", arg.Preview) // &{Prolog:Prolog ..... TableOfContent:Table of Content .....}
+	t.Logf("%+v\n", arg)         // {Title:Oliver Twist Author:Dickens Reversion:3 Category: Detail:0xc000005ac0 Preview:0xc000005c60}
+	t.Logf("%+v\n", arg.Detail)  // &{Price:25 Links:[www.dickensbooks.com]}
+	t.Logf("%+v\n", arg.Preview) // &{Prolog:Prolog ..... TableOfContent:Table of Content .....}
 }
 
 // NOTE: the test must put the last test

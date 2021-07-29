@@ -1,6 +1,8 @@
 package httparg
 
-import "github.com/bcowtech/httparg/internal"
+import (
+	"github.com/bcowtech/httparg/internal"
+)
 
 var RegistryService Registry
 
@@ -8,7 +10,7 @@ type Registry struct{}
 
 func (r Registry) SetupErrorHandler(fn ErrorHandler) {
 	if errorHandler != nil {
-		panic("[httparg] cannot setup global ErrorHandleFunc")
+		logger.Panic("cannot setup global ErrorHandleFunc")
 	}
 	initErrorHandler(fn)
 }

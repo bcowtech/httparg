@@ -1,6 +1,8 @@
 package httparg
 
 import (
+	"log"
+	"os"
 	"sync"
 
 	"github.com/bcowtech/arg"
@@ -10,22 +12,13 @@ import (
 	"github.com/bcowtech/httparg/querystring"
 )
 
-type InvalidArgumentError = arg.InvalidArgumentError
-
-// interface
-type (
-	Validatable interface {
-		Validate() error
-	}
-)
-
-// function
-type (
-	ContentProcessor = internal.ContentProcessor
-	ErrorHandler     func(err error)
+const (
+	LOGGER_PREFIX string = "[bcowtech/httparg] "
 )
 
 var (
+	logger *log.Logger = log.New(os.Stdout, LOGGER_PREFIX, log.LstdFlags|log.Lmsgprefix)
+
 	errorHandlerOnce sync.Once
 	errorHandler     ErrorHandler
 
@@ -37,6 +30,21 @@ var (
 		"application/x-www-form-urlencoded": form.Process,
 		"application/json":                  json.Process,
 	}
+)
+
+// interface
+type (
+	InvalidArgumentError = arg.InvalidArgumentError
+
+	Validatable interface {
+		Validate() error
+	}
+)
+
+// function
+type (
+	ContentProcessor = internal.ContentProcessor
+	ErrorHandler     func(err error)
 )
 
 func init() {
