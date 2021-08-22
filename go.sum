@@ -1,7 +1,7 @@
 github.com/bcowtech/arg v0.1.0 h1:ze6F3FBmXGM8ujWpj0DYLoUVGuZEooRTQAM6nllhk04=
 github.com/bcowtech/arg v0.1.0/go.mod h1:g/0jwjmGtotGp3xkPFnSx7hyjm69usUyzjdbenvPoBc=
-github.com/bcowtech/structproto v0.1.1-0.20210703044259-3023f48bff0f h1:H5I/54Cb5WUIy5XAEgrmmRoONFuQxZOCRyqc48YRukA=
-github.com/bcowtech/structproto v0.1.1-0.20210703044259-3023f48bff0f/go.mod h1:E8f3zYlTM+nAs82xAKmzP60+zsEhXecIxjlTW28uIg4=
+github.com/bcowtech/structproto v0.2.0 h1:zEcriVFoPnJNZyySz4Q39oKTMhDNO+9/ZEqBSpsTc4c=
+github.com/bcowtech/structproto v0.2.0/go.mod h1:E8f3zYlTM+nAs82xAKmzP60+zsEhXecIxjlTW28uIg4=
 github.com/bcowtech/types v0.1.0 h1:MrUadVmRc22FL3VUWQyX9Ytzia7zKgD+FsxApmBDJ44=
 github.com/bcowtech/types v0.1.0/go.mod h1:zcU4ACVupWFDB6mrIkbOZXF1Ure50pswyWvoBAd9KGE=
 github.com/cstockton/go-conv v0.0.0-20170524002450-66a2b2ba36e1 h1:h4OgDocdYHGiUh+zUEe4nFlb9ShoHUllqDefGaRoZFg=
